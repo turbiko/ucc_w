@@ -16,13 +16,20 @@
         </title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6HEPCXKNS9"></script><script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
+            gtag('config', 'G-6HEPCXKNS9');
+        </script>
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/core.css' %}">
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
