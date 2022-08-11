@@ -1,0 +1,400 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet"  type="text/css" href="{% static 'css/fonts.css' %}">
+<link rel="stylesheet"  type="text/css" href="{% static 'css/main.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="wrapper-menu">
+<header class="header">
+<div class="header__container"><a class="header__logo" href="">{{page.logo_abreviation}}</a>
+<div class="header__menu menu">
+<div class="menu__icon"></div>
+
+<nav class="menu__body">
+<ul class="menu__list">
+	<li><a class="menu__link" data-goto=".page__section_first" href="#">ABOUT</a></li>
+	<li><a class="menu__link" data-goto=".page__section_next" href="#">CONTACT US</a></li>
+	<li><a class="menu__link" data-goto=".page__section_media" href="#">MEDIA ABOUT UCC</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+</div>
+
+<div class="wrapper">
+<div class="column_empty"></div>
+
+<main class="wrapper_content">
+<div class="main_block page__section_1 about_block">
+<div class="main_block_side"></div>
+
+<div class="main_block_central block__row_1">
+<div class="block__flex_element_1">
+<div class="title_line_div"><span class="title_line partners_bold56"> {{page.logo_text}} </span></div>
+</div>
+
+<div class="block__flex_element_2">
+<p class="text_yellow_background about_text">{{page.text_intro | safe  }}</p>
+</div>
+</div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block_full page__section_video">
+<div class="main_block_central">
+<div class="video_frame"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="100%" src="https://www.youtube.com/embed/{{page.youtube_video_id}}" title="UKRAINE CONTENT CLUB (UCC)" width="100%"></iframe></div>
+</div>
+</div>
+
+<div class="main_block page__section_partners">
+<div class="main_block_side"></div>
+
+<div class="main_block_central block_flex_centered">
+<div class="supported_by partners_logos_container_width">
+<div class="block__sypported_logos_container partners_logos_container_width">
+<div class="block__header_supported_by partners_logos_container_width">
+<h1><span class="main_color">&nbsp; We are supported by &nbsp; </span></h1>
+</div>
+
+<div class="block__logotypes_flex">
+<div class="image_logos"><a href="https://www.c21media.net/" target="_blank"><img alt="" height="100%" src="static/img/logo/international/c21media.png" width="100%" /> </a></div>
+
+<div class="image_logos"><a href="https://www.pact.co.uk/" target="_blank"><img alt="" height="100%" src="static/img/logo/international/pact.png" width="100%" /> </a></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block page__section_first">
+<div class="main_block_side"></div>
+
+<div class="main_block_central"></div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block  main_blue2">
+<div class="main_block_side"></div>
+
+<div class="main_block_central page__section_prologue flex_prologue">
+<div class="block__row_prologue">
+<div class="block__flex_element box_prologue1">
+<h1 class="font_sansh61 color_yellow">{{page.text_prologue_title | safe  }}</h1>
+</div>
+
+<div class="page__text block__flex_element box_prologue2">
+<p class="text_prologue">{{page.text_prologue | safe  }}</p>
+</div>
+</div>
+</div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block page__section_why main_color">
+<div class="main_block_side"></div>
+
+<div class="main_block_central ">
+<div class="block__flex_why">
+<div class="block__section_why_sec1">
+<div class="block_list1">
+<div class="boolet_o"></div>
+
+<div class="text_list_why">{{page.text_list_why_1 | safe  }}</div>
+</div>
+
+<div class="block_list1">
+<div class="boolet_o"></div>
+
+<div class="text_list_why">{{page.text_list_why_2 | safe  }}</div>
+</div>
+
+<div class="block_list1">
+<div class="boolet_o"></div>
+
+<div class="text_list_why">{{page.text_list_why_3 | safe  }}</div>
+</div>
+
+<div class="block_list1">
+<div class="boolet_o"></div>
+
+<div class="text_list_why">{{page.text_list_why_4 | safe  }}</div>
+</div>
+
+<div class="block_list1">
+<div class="boolet_o"></div>
+
+<div class="text_list_why">{{page.text_list_why_5 | safe  }}</div>
+</div>
+</div>
+
+<div class="block__section_why_sec2">
+<h1 class="page__title_why partners_bold118 color_yellow">{{page.text_list_why_title | safe  }}</h1>
+</div>
+</div>
+</div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block page__section_how main_blue2">
+<div class="main_block_side"></div>
+
+<div class="main_block_central ">
+<div class="block_how">
+<div class="block__how_title">
+<h1 class="partners_bold118 color_yellow">{{page.text_list_how_title | safe  }}</h1>
+</div>
+
+<div class="block__how_text">
+<div class="block_list1">
+<div class="boolet_2"></div>
+
+<div class="text_list_how">{{page.text_list_how_1 | safe  }}</div>
+</div>
+
+<div class="block_list1">
+<div class="boolet_2"></div>
+
+<div class="text_list_how">{{page.text_list_how_2 | safe  }}</div>
+</div>
+
+<div class="block_list1">
+<div class="boolet_2"></div>
+
+<div class="text_list_how">{{page.text_list_how_3 | safe  }}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="main_block main_color">
+<div class="main_block_side"></div>
+
+<div class="main_block_central page__section_who">
+<div class="block_who">
+<div class="block__who_text">
+<div class="block_who_row">
+<div class="boolet_o"></div>
+
+<div class="text_who">{{page.text_list_who_1 | safe  }}</div>
+</div>
+
+<div class="block_who_row">
+<div class="boolet_o"></div>
+
+<div class="text_who">{{page.text_list_who_1 | safe  }}</div>
+</div>
+</div>
+
+<div class="block__who_title page__title  color_yellow">
+<h1 class="partners_bold118">{{page.text_list_who_title | safe  }}</h1>
+</div>
+</div>
+</div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block page__section_second">
+<div class="main_block_side"></div>
+
+<div class="main_block_central"></div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block page__section_guiding main_blue2">
+<div class="main_block_side"></div>
+
+<div class="main_block_central ">
+<div class="block_guiding">
+<div class="block__guiding_title1 page__title font_sansh61 color_yellow">
+<h1>{{page.text_list_guiding_header | safe  }}</h1>
+</div>
+
+<div class="block__guiding_tb">
+<div class="guiding_principe">
+<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
+<div>1</div>
+</div>
+
+<div class="guiding_principe_item">
+<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_1 | safe  }}</div>
+
+<div class="block__guiding_text">{{page.text_list_guiding_1 | safe  }}</div>
+</div>
+</div>
+
+<div class="guiding_principe">
+<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
+<div>2</div>
+</div>
+
+<div class="guiding_principe_item">
+<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_2 | safe  }}</div>
+
+<div class="block__guiding_text">{{page.text_list_guiding_2 | safe  }}</div>
+</div>
+</div>
+
+<div class="guiding_principe">
+<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
+<div>3</div>
+</div>
+
+<div class="guiding_principe_item">
+<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_3 | safe  }}</div>
+
+<div class="block__guiding_text">{{page.text_list_guiding_3 | safe  }}</div>
+</div>
+</div>
+
+<div class="guiding_principe">
+<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
+<div>4</div>
+</div>
+
+<div class="guiding_principe_item">
+<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_4 | safe  }}</div>
+
+<div class="block__guiding_text">{{page.text_list_guiding_4 | safe  }}</div>
+</div>
+</div>
+
+<div class="guiding_principe">
+<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
+<div>5</div>
+</div>
+
+<div class="guiding_principe_item">
+<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_5 | safe  }}</div>
+
+<div class="block__guiding_text">{{page.text_list_guiding_5 | safe  }}</div>
+</div>
+</div>
+
+<div class="guiding_principe">
+<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
+<div></div>
+</div>
+
+<div class="guiding_principe_item">
+<div class="block__guiding_title font_sansh24"></div>
+
+<div class="block__guiding_text"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block main_yellow">
+<div class="main_block_side"></div>
+
+<div class="main_block_central page__section_next">
+<div class="block_next">
+<div class="block__next_title">
+<h2 class="font_sansh61">{{page.text_list_next_title | safe  }}</h2>
+</div>
+
+<div class="block__next_text font_reg20_28">{{page.text_list_next | safe  }}</div>
+</div>
+</div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block main_color">
+<div class="main_block_side"></div>
+
+<div class="main_block_central page__section_media">
+<div class="block_media">
+<div class="block__media_title font_sansh61 color_yellow">
+<h2>{{page.text_media_about_us | safe  }}</h2>
+</div>
+
+<div class="block__media_text">
+<div class="block__media_cell">
+<div class="block__media_content">
+<div class="image_media"><a href="{{page.link_media_about_1}}" target="_blank"><img alt="" src="{{page.pic_media_about_1.url}}" /> </a></div>
+</div>
+
+<div class="media_short white_link"><a class="white_link"  href="{{page.link_media_about_1}}" target="_blank">{{page.pic_media_about_title_1}} </a></div>
+</div>
+
+<div class="block__media_cell">
+<div class="block__media_content">
+<div class="image_media"><a href="{{page.link_media_about_2}}" target="_blank"><img alt="" src="{{page.pic_media_about_2.url}}" /> </a></div>
+</div>
+
+<div class="media_short white_link"><a class="white_link"  href="{{page.link_media_about_2}}" target="_blank">{{page.pic_media_about_title_2}}</a></div>
+</div>
+
+<div class="block__media_cell">
+<div class="block__media_content">
+<div class="image_media"><a href="{{page.link_media_about_3}}" target="_blank"><img alt="" src="{{page.pic_media_about_3.url}}" /> </a></div>
+</div>
+
+<div class="media_short white_link"><a class="white_link" href="{{page.link_media_about_3}}" target="_blank">{{page.pic_media_about_title_3}} </a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block page__section_banner_2">
+<div class="main_block_side"></div>
+
+<div class="main_block_central"></div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block main_color">
+<div class="main_block_side"></div>
+
+<div class="main_block_central page__section_logos">
+<div class="block__our_logos">
+<div class="block__our_logos_text">{{page.text_partners | safe  }}</div>
+
+<div class="block__our_logos_links">
+<div class="image_fuag"><img alt="film.ua group" height="100%" src="static/img/logo/ua/fuag.png" width="100%" /></div>
+
+<div class="image_1p1"><img alt="1plus1" height="100%" src="static/img/logo/ua/1plus1.png" width="100%" /></div>
+
+<div class="image_slm"><img alt="" height="100%" src="static/img/logo/ua/slm.png" width="100%" /></div>
+
+<div class="image_uk"><img alt="" height="100%" src="static/img/logo/ua/ukraine.png" width="100%" /></div>
+</div>
+</div>
+</div>
+
+<div class="main_block_side"></div>
+</div>
+
+<div class="main_block_full">
+<div class="main_block_central main_block_clear main_footer page__section_copyr">
+<div class="footer_text block_footer page__section_copyr">{{page.text_copyright | safe  }}</div>
+</div>
+</div>
+</main>
+
+<div class="column_empty"></div>
+</div>
+
+
+{% endblock content %}
