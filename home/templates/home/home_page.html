@@ -321,37 +321,17 @@
 <div class="main_block_side"></div>
 
 <div class="main_block_central page__section_media">
+
+
 <div class="block_media">
-<div class="block__media_title font_sansh61 color_yellow">
-<h2>{{page.text_media_about_us | safe  }}</h2>
+
+        {% for block in page.content %}
+        {% include_block block %}
+        {% endfor %}
+
 </div>
 
-<div class="block__media_text">
-<div class="block__media_cell">
-<div class="block__media_content">
-<div class="image_media"><a href="{{page.link_media_about_1}}" target="_blank"><img alt="" src="{{page.pic_media_about_1.url}}" /> </a></div>
-</div>
 
-<div class="media_short white_link"><a class="white_link"  href="{{page.link_media_about_1}}" target="_blank">{{page.pic_media_about_title_1}} </a></div>
-</div>
-
-<div class="block__media_cell">
-<div class="block__media_content">
-<div class="image_media"><a href="{{page.link_media_about_2}}" target="_blank"><img alt="" src="{{page.pic_media_about_2.url}}" /> </a></div>
-</div>
-
-<div class="media_short white_link"><a class="white_link"  href="{{page.link_media_about_2}}" target="_blank">{{page.pic_media_about_title_2}}</a></div>
-</div>
-
-<div class="block__media_cell">
-<div class="block__media_content">
-<div class="image_media"><a href="{{page.link_media_about_3}}" target="_blank"><img alt="" src="{{page.pic_media_about_3.url}}" /> </a></div>
-</div>
-
-<div class="media_short white_link"><a class="white_link" href="{{page.link_media_about_3}}" target="_blank">{{page.pic_media_about_title_3}} </a></div>
-</div>
-</div>
-</div>
 </div>
 <div class="main_block_side"></div>
 </div>

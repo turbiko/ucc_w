@@ -6,8 +6,10 @@ from wagtail.fields import RichTextField, StreamField
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.core.models import Page, Orderable
-from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel, StreamFieldPanel
 from wagtail.search import index
+
+from streams import blocks
 
 def file_path(instance, filename):
     basefilename, file_extension= os.path.splitext(filename)
@@ -48,19 +50,15 @@ class HomePage(Page):
     text_list_guiding_5 = models.TextField(blank=True)
     text_list_next_title = models.TextField(blank=True)
     text_list_next = models.TextField(blank=True)
-    text_media_about_us = models.TextField(blank=True)
-    pic_media_about_title_1 = models.TextField(blank=True)
-    link_media_about_1 = models.URLField(blank=True)
-    pic_media_about_1 = models.FileField(upload_to=file_path, blank=True, null=True)
-    pic_media_about_title_2 = models.TextField(blank=True)
-    link_media_about_2 = models.URLField(blank=True)
-    pic_media_about_2 = models.FileField(upload_to=file_path, blank=True, null=True)
-    pic_media_about_title_3 = models.TextField(blank=True)
-    link_media_about_3 = models.URLField(blank=True)
-    pic_media_about_3 = models.FileField(upload_to=file_path, blank=True, null=True)
-    text_media_about_pic_2 = models.TextField(blank=True)
     text_partners = models.TextField(blank=True)
     text_copyright = models.TextField(blank=True)
+
+    content = StreamField([
+        ("cards", blocks.CardBlock()),
+    ],
+        null=True,
+        blank=True,
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel('logo_abreviation'),
@@ -95,16 +93,8 @@ class HomePage(Page):
         FieldPanel('text_list_guiding_5'),
         FieldPanel('text_list_next_title'),
         FieldPanel('text_list_next'),
-        FieldPanel('text_media_about_us'),
-        FieldPanel('pic_media_about_title_1'),
-        FieldPanel('link_media_about_1'),
-        FieldPanel('pic_media_about_1'),
-        FieldPanel('pic_media_about_title_2'),
-        FieldPanel('link_media_about_2'),
-        FieldPanel('pic_media_about_2'),
-        FieldPanel('pic_media_about_title_3'),
-        FieldPanel('link_media_about_3'),
-        FieldPanel('pic_media_about_3'),
+        StreamFieldPanel("content"),
         FieldPanel('text_partners'),
         FieldPanel('text_copyright'),
     ]
+
