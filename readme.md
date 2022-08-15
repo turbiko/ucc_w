@@ -1,4 +1,13 @@
- Server config
+Сайт: https://ukrainecontentclub.com.ua/
+тип: Лендинг
+хостинг: розміщено на технічному майданчику Film.ua
+технології: 
+	адмінка:Django
+	фронтенд: HTML+CSS
+	DB: SQLite
+	Other: Docker, NGINX, Ubuntu
+-----------------
+Server config
  Linux server (Ubuntu)
 - fresh version preffered
 - minimal installation.
