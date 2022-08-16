@@ -18,17 +18,10 @@ Server config
 - installed docker
  
 Deploy to server:
+
 git clone https://github.com/turbiko/ucc_w.git
 
 cd ./ucc_w
-
-docker --version
-
-docker container ls
-
-sudo docker build -t ucc .
-
-sudo docker exec -it <container_id> /bin/bash
 
 python manage.py makemigrations
 
@@ -37,3 +30,17 @@ python manage.py migrate
 python manage.py createsuperuser
 
 python manage.py collectstatic
+
+docker --version
+
+sudo docker images
+
+docker container ls
+
+sudo docker build -t ucc .
+
+sudo docker run ucc
+
+sudo docker exec -it <container_id> /bin/bash
+
+

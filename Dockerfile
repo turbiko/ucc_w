@@ -5,14 +5,14 @@ FROM python:3.10.4-slim-buster
 RUN useradd wagtail
 
 # Port used by this container to serve HTTP.
-EXPOSE 8100
+EXPOSE 8200
 
 # Set environment variables.
 # 1. Force Python stdout and stderr streams to be unbuffered.
 # 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
 #    command.
 ENV PYTHONUNBUFFERED=1 \
-    PORT=8100
+    PORT=8200
 
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
