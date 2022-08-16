@@ -2,7 +2,15 @@
 FROM python:3.10.4-slim-buster
 
 # Add user that will be used in the container.
-RUN useradd wagtail
+RUN addgroup -S wagtail && adduser -S wagtail -G wagtail
+
+# Create directories
+ENV HOME=/app
+ENV APP_HOME=/app/ucc_w
+RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/static
+RUN mkdir $APP_HOME/media
+WORKDIR $APP_HOME
 
 # Port used by this container to serve HTTP.
 EXPOSE 8200
@@ -11,6 +19,7 @@ EXPOSE 8200
 # 1. Force Python stdout and stderr streams to be unbuffered.
 # 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
 #    command.
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED=1 \
     PORT=8200
 
@@ -30,6 +39,7 @@ RUN pip install "gunicorn==20.0.4"
 # Install the project requirements.
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
+
 
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
