@@ -1,7 +1,11 @@
-Сайт: https://ukrainecontentclub.com.ua/
+# Сайт: https://ukrainecontentclub.com.ua/
+
 тип: Лендинг
+
 хостинг: розміщено на технічному майданчику Film.ua
+
 технології: 
+
 	адмінка:Django
 	фронтенд: HTML+CSS
 	DB: SQLite
@@ -14,13 +18,11 @@ Server config
 - installed docker
  
 Deploy to server:
-
+git clone https://github.com/turbiko/ucc_w.git
+cd ./ucc_w
 docker --version
-
-sudo docker build -t ucc .
-
 docker container ls
-
+sudo docker build -t ucc .
 sudo docker exec -it <container_id> /bin/bash
 python manage.py makemigrations
 python manage.py migrate
