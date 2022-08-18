@@ -11,13 +11,20 @@ RUN useradd wagtail
 ENV PYTHONUNBUFFERED=1
 
 # Install system packages required by Wagtail and Django.
+# install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
+    nano \
     build-essential \
+    gettext \
     libpq-dev \
-    libmariadbclient-dev \
     libjpeg62-turbo-dev \
     zlib1g-dev \
     libwebp-dev \
+    python3-dev \
+    libpq-dev \
+    gcc \
+    git \
+    musl-dev \
  && rm -rf /var/lib/apt/lists/*
 
 # Install the application server.
@@ -29,6 +36,7 @@ RUN pip install "gunicorn==20.0.4"
 
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
+RUN pip install --upgrade pip
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /app
