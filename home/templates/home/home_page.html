@@ -218,80 +218,14 @@
 
 <div class="main_block_central ">
 <div class="block_guiding">
-<div class="block__guiding_title1 page__title font_sansh61 color_yellow">
-<h1>{{page.text_list_guiding_header | safe  }}</h1>
-</div>
 
-<div class="block__guiding_tb">
-<div class="guiding_principe">
-<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
-<div>1</div>
-</div>
 
-<div class="guiding_principe_item">
-<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_1 | safe  }}</div>
+                {# streams block for block__guiding #}
+        {% for block in page.content1 %}
+        {% include_block block %}
+        {% endfor %}
 
-<div class="block__guiding_text">{{page.text_list_guiding_1 | safe  }}</div>
-</div>
-</div>
 
-<div class="guiding_principe">
-<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
-<div>2</div>
-</div>
-
-<div class="guiding_principe_item">
-<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_2 | safe  }}</div>
-
-<div class="block__guiding_text">{{page.text_list_guiding_2 | safe  }}</div>
-</div>
-</div>
-
-<div class="guiding_principe">
-<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
-<div>3</div>
-</div>
-
-<div class="guiding_principe_item">
-<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_3 | safe  }}</div>
-
-<div class="block__guiding_text">{{page.text_list_guiding_3 | safe  }}</div>
-</div>
-</div>
-
-<div class="guiding_principe">
-<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
-<div>4</div>
-</div>
-
-<div class="guiding_principe_item">
-<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_4 | safe  }}</div>
-
-<div class="block__guiding_text">{{page.text_list_guiding_4 | safe  }}</div>
-</div>
-</div>
-
-<div class="guiding_principe">
-<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
-<div>5</div>
-</div>
-
-<div class="guiding_principe_item">
-<div class="block__guiding_title font_sansh24">{{page.text_list_guiding_title_5 | safe  }}</div>
-
-<div class="block__guiding_text">{{page.text_list_guiding_5 | safe  }}</div>
-</div>
-</div>
-
-<div class="guiding_principe">
-<div class="guiding_principe_tbnum color_yellow" id="minf_regnumber">
-<div></div>
-</div>
-
-<div class="guiding_principe_item">
-<div class="block__guiding_title font_sansh24"></div>
-
-<div class="block__guiding_text"></div>
 </div>
 </div>
 </div>
@@ -324,7 +258,7 @@
 
 
 <div class="block_media">
-
+        {# streams block for media about us #}
         {% for block in page.content %}
         {% include_block block %}
         {% endfor %}

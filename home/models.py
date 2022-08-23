@@ -18,6 +18,9 @@ def file_path(instance, filename):
 
 
 class HomePage(Page):
+    parent_page_types = ['wagtailcore.Page']
+    subpage_types = []
+
     logo_text = models.CharField(_('Logotype long'), max_length=50, blank=True)
     logo_abreviation = models.CharField(_('logo abbreviation'), max_length=5, blank=True)
     text_intro = models.TextField(blank=True)
@@ -52,6 +55,12 @@ class HomePage(Page):
     text_list_next = models.TextField(blank=True)
     text_partners = models.TextField(blank=True)
     text_copyright = models.TextField(blank=True)
+    content1 = StreamField([
+        ("text_block", blocks.TextBlock1()),
+    ],
+        null=True,
+        blank=True,
+    )
 
     content = StreamField([
         ("cards", blocks.CardBlock()),
@@ -91,6 +100,8 @@ class HomePage(Page):
         FieldPanel('text_list_guiding_4'),
         FieldPanel('text_list_guiding_title_5'),
         FieldPanel('text_list_guiding_5'),
+        # StreamFieldPanel("guiding"),
+        StreamFieldPanel("content1"),
         FieldPanel('text_list_next_title'),
         FieldPanel('text_list_next'),
         StreamFieldPanel("content"),

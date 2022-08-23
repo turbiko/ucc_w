@@ -27,3 +27,22 @@ class CardBlock(blocks.StructBlock):
         template = "streams/card_block.html"
         icon = "placeholder"
         label = "Staff Cards"
+
+
+class TextBlock1(blocks.StructBlock):
+    """Text Cards with num, title and description"""
+
+    title1 = blocks.TextBlock(required=True, help_text="Add your title")
+
+    text_cards = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("number", blocks.IntegerBlock(required=False)),
+                ("title", blocks.CharBlock(required=False, max_length=60)),
+                ("description", blocks.CharBlock(required=False, max_length=200)),
+        ]))
+
+    class Meta:  # noqa
+        template = "streams/text_block1.html"
+        icon = "placeholder"
+        label = "Text Cards with num and title"
