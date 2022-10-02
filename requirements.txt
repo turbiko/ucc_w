@@ -1,4 +1,4 @@
 wagtail==3.0.1
 python-memcached
 elasticsearch
-psycopg2-binary
+whitenoise==6.2.0
