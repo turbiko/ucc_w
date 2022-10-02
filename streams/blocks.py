@@ -19,6 +19,7 @@ class CardBlock(blocks.StructBlock):
                         help_text="If the button page above is selected, that will be used first.",  # noqa
                     ),
                 ),
+
             ]
         )
     )
