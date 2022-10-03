@@ -16,6 +16,7 @@ Server config (my deployment reccomendation):
  Linux server (Ubuntu)
 - fresh version preffered
 - minimal installation.
+- python version 3.9.5 and up
 - installed docker
 - installed tmux (or any tool to avoid disconnection troubles) 
  
