@@ -2,3 +2,4 @@ wagtail==3.0.1
 python-memcached
 elasticsearch
 whitenoise==6.2.0
+tzdata==2022.4
