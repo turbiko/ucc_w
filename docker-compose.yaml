@@ -1,14 +1,12 @@
 version: '3.7'
+
 services:
-  ucc_web:
-    container_name: ucc
-    build:
-      context: .
-      dockerfile: Dockerfile
+  ucc:
+    build: .
     command: sh entrypoint.sh
     volumes:
-      - .:/app
+      - .:/usr/src/app/
     ports:
-      - 9100:8000
+      - 8010:8000
     env_file:
       - .env.dev
